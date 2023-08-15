@@ -2,8 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/MySales
-/MySales/obj
-/MySales.Application/obj
-/MySales.Domain/obj
-/MySales.Infrastructure/obj
+/MySales/.vs
+/MySales/MySales/obj
+/MySales/MySales.Application/obj
+/MySales/MySales.Domain/obj
+/MySales/MySales.Infrastructure/obj
