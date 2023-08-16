@@ -12,3 +12,4 @@
 /src/MySales.Application/obj
 /src/MySales.Domain/obj
 /src/MySales.Infrastructure/obj
+/src/MySales/bin/Debug/net7.0
