@@ -14,3 +14,5 @@
 /src/MySales.Infrastructure/obj
 /src/MySales/bin/Debug/net7.0
 /src/MySales.Infrastructure/bin/Debug/net7.0
+/src/MySales.Application/bin/Debug/net7.0
+/src/MySales.Domain/bin/Debug/net7.0
