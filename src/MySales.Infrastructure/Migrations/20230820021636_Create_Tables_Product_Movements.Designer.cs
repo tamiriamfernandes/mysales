@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySales.Infrastructure.Contexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySales.Infrastructure.Migrations
 {
     [DbContext(typeof(MySalesContext))]
-    partial class MySalesContextModelSnapshot : ModelSnapshot
+    [Migration("20230820021636_Create_Tables_Product_Movements")]
+    partial class Create_Tables_Product_Movements
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,30 +103,6 @@ namespace MySales.Infrastructure.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("MySales.Core.Entities.Stock", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProductId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasDefaultValue(0);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId")
-                        .IsUnique();
-
-                    b.ToTable("Stock");
-                });
-
             modelBuilder.Entity("MySales.Core.Entities.Movements", b =>
                 {
                     b.HasOne("MySales.Core.Entities.Product", "Product")
@@ -135,23 +114,9 @@ namespace MySales.Infrastructure.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("MySales.Core.Entities.Stock", b =>
-                {
-                    b.HasOne("MySales.Core.Entities.Product", "Product")
-                        .WithOne("Stock")
-                        .HasForeignKey("MySales.Core.Entities.Stock", "ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("MySales.Core.Entities.Product", b =>
                 {
                     b.Navigation("Movements");
-
-                    b.Navigation("Stock")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

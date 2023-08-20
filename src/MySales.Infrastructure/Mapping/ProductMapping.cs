@@ -1,27 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MySales.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MySales.Infrastructure.Mapping;
 
-public class ClientMapping : IEntityTypeConfiguration<Client>
+public class ProductMapping : IEntityTypeConfiguration<Product>
 {
-    public void Configure(EntityTypeBuilder<Client> builder)
+    public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Name)
+        builder.Property(e => e.Description)
             .HasColumnType("varchar(250)")
             .IsRequired()
             .HasMaxLength(250);
 
-        builder.Property(e => e.Phone)
-            .HasColumnType("varchar(11)");
+        builder.Property(e => e.value)
+            .HasColumnType("decimal(15,2)");
 
         builder.Property(e => e.CreatedDate)
             .HasColumnType("timestamp")
