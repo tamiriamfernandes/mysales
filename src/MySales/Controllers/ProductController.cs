@@ -9,17 +9,17 @@ namespace MySales.Api.Controllers;
 [Route("api/v{version:apiVersion}/products")]
 public class ProductController : Controller
 {
-    private readonly IProductUseCase _productService;
+    private readonly IProductUseCase _productUseCase;
 
-    public ProductController(IProductUseCase productService)
+    public ProductController(IProductUseCase productUseCase)
     {
-        _productService = productService;
+        _productUseCase = productUseCase;
     }
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductDto createProduct)
     {
-        var result = await _productService.CreateProductAsync(createProduct);
+        var result = await _productUseCase.CreateProductAsync(createProduct);
         return Ok(result);
     }
 }
