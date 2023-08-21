@@ -2,7 +2,7 @@
 using MySales.Model.DTOs.Product;
 using MySales.Model.Entities;
 
-namespace MySales.AutoMapperConfig.Profiles;
+namespace MySales.Application.Profiles;
 
 public class ProductProfile : Profile
 {

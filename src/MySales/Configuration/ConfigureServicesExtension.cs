@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySales.Application.Contracts;
+using MySales.Application.Profiles;
 using MySales.Application.UseCases;
 using MySales.Infrastructure.Contexts;
 using MySales.Infrastructure.Repositories;
@@ -25,4 +26,11 @@ public static class ConfigureServicesExtension
             options.UseNpgsql(connectionstring));
     }
 
+    public static void AddAutoMapperSetup(this IServiceCollection services)
+    {
+        if (services is null) throw new ArgumentNullException(nameof(services));
+
+        services.AddAutoMapper(
+                typeof(ProductProfile));
+    }
 }

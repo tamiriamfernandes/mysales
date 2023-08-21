@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using MySales.Api.Configuration;
-using MySales.AutoMapperConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;

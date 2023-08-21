@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
@@ -21,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MySales.Application\MySales.Application.csproj" />
-    <ProjectReference Include="..\MySales.AutoMapperConfig\MySales.AutoMapperConfig.csproj" />
     <ProjectReference Include="..\MySales.Infrastructure\MySales.Infrastructure.csproj" />
   </ItemGroup>
 
