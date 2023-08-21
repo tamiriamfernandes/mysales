@@ -7,6 +7,6 @@ public class Product
     public decimal value { get; set; }
     public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-    public virtual IEnumerable<Movements> Movements { get; set; } = default!;
-    public virtual Stock Stock { get; set; } = default!;
+    public virtual IEnumerable<Movements>? Movements { get; set; } = default!;
+    public virtual Stock? Stock { get; set; } = default!;
 }

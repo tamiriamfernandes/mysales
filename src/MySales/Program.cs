@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MySales.Api.Configuration;
+using MySales.AutoMapperConfig;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 // Add services to the container.
 builder.Services.ConfigureServices(configuration);
+builder.Services.AddAutoMapperSetup();
 builder.Services.AddContext(configuration);
 builder.Services.AddApiVersioning(options =>
 {

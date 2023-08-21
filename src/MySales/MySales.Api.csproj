@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MySales.Application\MySales.Application.csproj" />
+    <ProjectReference Include="..\MySales.AutoMapperConfig\MySales.AutoMapperConfig.csproj" />
     <ProjectReference Include="..\MySales.Infrastructure\MySales.Infrastructure.csproj" />
   </ItemGroup>
 
