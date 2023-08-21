@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySales.Application.Contracts;
+using MySales.Application.Contracts.Repositories;
+using MySales.Application.Contracts.UseCases;
 using MySales.Application.Profiles;
 using MySales.Application.UseCases;
 using MySales.Infrastructure.Contexts;

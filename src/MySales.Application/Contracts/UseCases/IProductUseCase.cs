@@ -1,7 +1,6 @@
-﻿
-using MySales.Model.DTOs.Product;
+﻿using MySales.Model.DTOs.Product;
 
-namespace MySales.Application.Contracts;
+namespace MySales.Application.Contracts.UseCases;
 
 public interface IProductUseCase
 {

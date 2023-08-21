@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySales.Application.Contracts;
+using MySales.Application.Contracts.UseCases;
 using MySales.Model.DTOs.Product;
 
 namespace MySales.Api.Controllers;
