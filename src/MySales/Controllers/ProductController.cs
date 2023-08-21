@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MySales.Api.Filters;
 using MySales.Application.Contracts.UseCases;
 using MySales.Model.DTOs.Product;
 
@@ -7,6 +8,7 @@ namespace MySales.Api.Controllers;
 [ApiController]
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/products")]
+[ApiResponseFilter]
 public class ProductController : Controller
 {
     private readonly IProductUseCase _productUseCase;

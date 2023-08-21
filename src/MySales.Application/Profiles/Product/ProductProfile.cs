@@ -8,6 +8,6 @@ public class ProductProfile : Profile
 {
     public ProductProfile()
     {
-        CreateMap<CreateProductDto, Product>();
+        CreateMap<CreateProductDto, Model.Entities.Product>();
     }
 }
