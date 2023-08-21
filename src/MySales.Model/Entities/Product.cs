@@ -1,4 +1,4 @@
-﻿namespace MySales.Core.Entities;
+﻿namespace MySales.Model.Entities;
 
 public class Product
 {

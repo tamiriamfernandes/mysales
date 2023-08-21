@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySales.Core.Enums;
+using MySales.Model.Enums;
 
 namespace MySales.Infrastructure.Contexts;
 

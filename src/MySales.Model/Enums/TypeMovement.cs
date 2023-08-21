@@ -1,4 +1,4 @@
-﻿namespace MySales.Core.Enums;
+﻿namespace MySales.Model.Enums;
 
 public enum TypeMovement
 {

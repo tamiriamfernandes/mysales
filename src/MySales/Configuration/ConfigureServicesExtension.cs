@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySales.Application.Contracts;
-using MySales.Core.Repositories;
-using MySales.Core.Services;
+using MySales.Application.UseCases;
 using MySales.Infrastructure.Contexts;
 using MySales.Infrastructure.Repositories;
 
@@ -15,7 +14,7 @@ public static class ConfigureServicesExtension
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IProductUseCase, ProductUseCase>();
     }
 
     public static void AddContext(this IServiceCollection services, IConfiguration configuration)

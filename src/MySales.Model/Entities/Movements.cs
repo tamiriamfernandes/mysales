@@ -1,6 +1,6 @@
-﻿using MySales.Core.Enums;
+﻿using MySales.Model.Enums;
 
-namespace MySales.Core.Entities;
+namespace MySales.Model.Entities;
 
 public class Movements
 {

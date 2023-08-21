@@ -1,4 +1,4 @@
-﻿namespace MySales.Core.Entities;
+﻿namespace MMySales.Model.Entities;
 
 public class Client
 {

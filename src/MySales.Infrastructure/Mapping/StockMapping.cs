@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MySales.Core.Entities;
+using MySales.Model.Entities;
 
 namespace MySales.Infrastructure.Mapping;
 

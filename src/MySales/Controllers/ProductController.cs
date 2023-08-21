@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MySales.Application.Contracts;
-using MySales.Application.DTOs.Product;
-using MySales.Core.Services;
+using MySales.Model.DTOs.Product;
 
 namespace MySales.Api.Controllers;
 
@@ -10,9 +9,9 @@ namespace MySales.Api.Controllers;
 [Route("api/v{version:apiVersion}/products")]
 public class ProductController : Controller
 {
-    private readonly IProductService _productService;
+    private readonly IProductUseCase _productService;
 
-    public ProductController(IProductService productService)
+    public ProductController(IProductUseCase productService)
     {
         _productService = productService;
     }

@@ -21,3 +21,5 @@
 /src/MySales.AutoMapperConfig/obj
 /src/MySales.Core/bin/Debug/net7.0
 /src/MySales.Core/obj
+/src/MySales.Model/obj
+/src/MySales.Model/bin/Debug/net7.0

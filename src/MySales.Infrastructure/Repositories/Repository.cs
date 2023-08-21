@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySales.Core.Repositories;
+using MySales.Application.Contracts;
 using MySales.Infrastructure.Contexts;
 using System.Linq.Expressions;
 

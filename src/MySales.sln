@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySales.Infrastructure", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySales.Core", "MySales.Core\MySales.Core.csproj", "{BA825795-1DBF-4E25-B8A0-CAE0B4EB5383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySales.AutoMapperConfig", "MySales.AutoMapperConfig\MySales.AutoMapperConfig.csproj", "{0743F7C4-FEDD-4567-B21A-7499B94590FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySales.AutoMapperConfig", "MySales.AutoMapperConfig\MySales.AutoMapperConfig.csproj", "{0743F7C4-FEDD-4567-B21A-7499B94590FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySales.Model", "MySales.Model\MySales.Model.csproj", "{6B77F4B2-CC3B-4D6F-94E0-114697DAFA47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0743F7C4-FEDD-4567-B21A-7499B94590FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0743F7C4-FEDD-4567-B21A-7499B94590FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0743F7C4-FEDD-4567-B21A-7499B94590FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B77F4B2-CC3B-4D6F-94E0-114697DAFA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B77F4B2-CC3B-4D6F-94E0-114697DAFA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B77F4B2-CC3B-4D6F-94E0-114697DAFA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B77F4B2-CC3B-4D6F-94E0-114697DAFA47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

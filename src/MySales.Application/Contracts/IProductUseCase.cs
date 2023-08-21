@@ -1,8 +1,9 @@
-﻿using MySales.Application.DTOs.Product;
+﻿
+using MySales.Model.DTOs.Product;
 
 namespace MySales.Application.Contracts;
 
-public interface IProductService
+public interface IProductUseCase
 {
     Task<long> CreateProductAsync(CreateProductDto createProduct);
 }

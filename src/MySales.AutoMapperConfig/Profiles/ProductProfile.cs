@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MySales.Application.DTOs.Product;
-using MySales.Core.Entities;
+using MySales.Model.DTOs.Product;
+using MySales.Model.Entities;
 
 namespace MySales.AutoMapperConfig.Profiles;
 
