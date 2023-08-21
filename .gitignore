@@ -16,3 +16,8 @@
 /src/MySales.Infrastructure/bin/Debug/net7.0
 /src/MySales.Application/bin/Debug/net7.0
 /src/MySales.Domain/bin/Debug/net7.0
+/src/MySales.AutoMapperConfig/bin/Debug/net7.0
+/src/MySales.AutoMapperConfig/obj/Debug/net7.0
+/src/MySales.AutoMapperConfig/obj
+/src/MySales.Core/bin/Debug/net7.0
+/src/MySales.Core/obj
