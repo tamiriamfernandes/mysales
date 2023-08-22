@@ -1,8 +1,10 @@
 ﻿using MySales.Model.DTOs.Product;
+using MySales.Model.Entities;
 
 namespace MySales.Application.Contracts.UseCases;
 
 public interface IProductUseCase
 {
-    Task<long> CreateProductAsync(CreateProductDto createProduct);
+    IEnumerable<DetailProductDto> GetAll();
+    Task<long> CreateAsync(CreateProductDto createProduct);
 }

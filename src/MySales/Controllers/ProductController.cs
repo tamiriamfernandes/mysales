@@ -18,10 +18,20 @@ public class ProductController : Controller
         _productUseCase = productUseCase;
     }
 
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        var result = _productUseCase.GetAll();
+
+        if (!result.Any()) return NotFound();
+
+        return Ok(result);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductDto createProduct)
     {
-        var result = await _productUseCase.CreateProductAsync(createProduct);
+        var result = await _productUseCase.CreateAsync(createProduct);
         return Ok(result);
     }
 }

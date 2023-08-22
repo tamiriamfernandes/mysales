@@ -17,7 +17,7 @@ namespace MySales.Application.UseCases
             _productRepository = productRepository;
         }
 
-        public async Task<long> CreateProductAsync(CreateProductDto createProduct)
+        public async Task<long> CreateAsync(CreateProductDto createProduct)
         {
             var entity = _mapper.Map<Product>(createProduct);
             _productRepository.Add(entity);
@@ -25,6 +25,14 @@ namespace MySales.Application.UseCases
             await _productRepository.SaveChangesAsync();
 
             return entity.Id;
+        }
+
+        public IEnumerable<DetailProductDto> GetAll()
+        {
+            var products = _productRepository.GetAll().ToList();
+            var productsDto = _mapper.Map<IEnumerable<DetailProductDto>>(products);
+
+            return productsDto;
         }
     }
 }

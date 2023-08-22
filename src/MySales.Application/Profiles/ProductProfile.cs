@@ -2,12 +2,13 @@
 using MySales.Model.DTOs.Product;
 using MySales.Model.Entities;
 
-namespace MySales.Application.Profiles.Product;
+namespace MySales.Application.Profiles;
 
 public class ProductProfile : Profile
 {
     public ProductProfile()
     {
-        CreateMap<CreateProductDto, Model.Entities.Product>();
+        CreateMap<CreateProductDto, Product>();
+        CreateMap<Product, DetailProductDto>();
     }
 }
