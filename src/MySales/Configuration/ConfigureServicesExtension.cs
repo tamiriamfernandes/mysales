@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySales.Application.Contracts.Repositories;
 using MySales.Application.Contracts.UseCases;
-using MySales.Application.Profiles.Product;
+using MySales.Application.Profiles;
 using MySales.Application.UseCases;
 using MySales.Infrastructure.Contexts;
 using MySales.Infrastructure.Repositories;
@@ -17,6 +17,7 @@ public static class ConfigureServicesExtension
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
         services.AddScoped<IProductUseCase, ProductUseCase>();
+        services.AddScoped<IClientUseCase, ClientUseCase>();
     }
 
     public static void AddContext(this IServiceCollection services, IConfiguration configuration)
@@ -32,6 +33,7 @@ public static class ConfigureServicesExtension
         if (services is null) throw new ArgumentNullException(nameof(services));
 
         services.AddAutoMapper(
-                typeof(ProductProfile));
+                typeof(ProductProfile),
+                typeof(ClientProfile));
     }
 }
