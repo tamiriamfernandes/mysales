@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MMySales.Model.Entities;
+using MySales.Model.Entities;
 using MySales.Model.DTOs.Client;
 
 namespace MySales.Application.Profiles;

@@ -4,21 +4,21 @@ using MySales.Model.Entities;
 
 namespace MySales.Infrastructure.Mapping;
 
-public class ClientMapping : IEntityTypeConfiguration<Client>
+public class UserMapping : IEntityTypeConfiguration<User>
 {
-    public void Configure(EntityTypeBuilder<Client> builder)
+    public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("Clients");
+        builder.ToTable("Users");
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Name)
-            .HasColumnType("varchar(250)")
+        builder.Property(e => e.Login)
+            .HasColumnType("varchar(100)")
             .IsRequired()
-            .HasMaxLength(250);
+            .HasMaxLength(100);
 
-        builder.Property(e => e.Phone)
-            .HasColumnType("varchar(11)");
+        builder.Property(e => e.Password)
+            .IsRequired();
 
         builder.Property(e => e.CreatedDate)
             .HasColumnType("timestamp")

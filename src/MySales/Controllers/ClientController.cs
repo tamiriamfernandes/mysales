@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MySales.Api.Filters;
 using MySales.Application.Contracts.UseCases;
-using MySales.Application.UseCases;
 using MySales.Model.DTOs.Client;
-using MySales.Model.DTOs.Product;
 
 namespace MySales.Api.Controllers;
 

@@ -8,6 +8,8 @@ public class StockMapping : IEntityTypeConfiguration<Stock>
 {
     public void Configure(EntityTypeBuilder<Stock> builder)
     {
+        builder.ToTable("Stocks");
+
         builder.HasKey(e => e.Id);
 
         builder.Property(e => e.ProductId)

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MMySales.Model.Entities;
 using MySales.Application.Contracts.Repositories;
 using MySales.Application.Contracts.UseCases;
 using MySales.Model.DTOs.Client;
