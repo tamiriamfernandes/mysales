@@ -14,6 +14,11 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddLogging(builder =>
+{
+    builder.AddConsole();
+});
+
 // Add services to the container.
 builder.Services.ConfigureServices(configuration);
 builder.Services.AddAutoMapperSetup();
