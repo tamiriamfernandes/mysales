@@ -3,6 +3,8 @@ using MySales.Application.Contracts.Repositories;
 using MySales.Application.Contracts.UseCases;
 using MySales.Application.Profiles;
 using MySales.Application.UseCases;
+using MySales.Core.Contracts;
+using MySales.Core.Core;
 using MySales.Infrastructure.Contexts;
 using MySales.Infrastructure.Repositories;
 
@@ -18,6 +20,9 @@ public static class ConfigureServicesExtension
 
         services.AddScoped<IProductUseCase, ProductUseCase>();
         services.AddScoped<IClientUseCase, ClientUseCase>();
+        services.AddScoped<IOauthUseCase, OauthUseCase>();
+
+        services.AddScoped<IOauthCore, OauthCore>();
     }
 
     public static void AddContext(this IServiceCollection services, IConfiguration configuration)
@@ -34,6 +39,7 @@ public static class ConfigureServicesExtension
 
         services.AddAutoMapper(
                 typeof(ProductProfile),
+                typeof(ClientProfile),
                 typeof(ClientProfile));
     }
 }
