@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MySales.Api.Filters;
 using MySales.Application.Contracts.UseCases;
-using MySales.Model.DTOs.Oauth;
 using MySales.Model.DTOs.Product;
 
 namespace MySales.Api.Controllers;

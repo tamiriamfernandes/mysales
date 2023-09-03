@@ -12,7 +12,7 @@ public class ApiResponseFilter : ActionFilterAttribute
             var apiResponse = new
             {
                 Success = true,
-                Data = objectResult.Value
+                Data = objectResult.StatusCode.Equals(200) ? objectResult.Value : null
             };
 
             context.Result = new ObjectResult(apiResponse)
