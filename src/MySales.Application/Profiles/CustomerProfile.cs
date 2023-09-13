@@ -4,10 +4,10 @@ using MySales.Model.DTOs.Client;
 
 namespace MySales.Application.Profiles;
 
-public class ClientProfile : Profile
+public class CustomerProfile : Profile
 {
-    public ClientProfile()
+    public CustomerProfile()
     {
-        CreateMap<CreateClientDto, Client>();
+        CreateMap<CreateCustomerDto, Customer>();
     }
 }

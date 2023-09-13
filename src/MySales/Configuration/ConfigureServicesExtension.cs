@@ -19,7 +19,7 @@ public static class ConfigureServicesExtension
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
         services.AddScoped<IProductUseCase, ProductUseCase>();
-        services.AddScoped<IClientUseCase, ClientUseCase>();
+        services.AddScoped<ICustomerCrudUseCase, CustomerCrudUseCase>();
         services.AddScoped<IOauthUseCase, OauthUseCase>();
 
         services.AddScoped<IOauthCore, OauthCore>();
@@ -39,7 +39,7 @@ public static class ConfigureServicesExtension
 
         services.AddAutoMapper(
                 typeof(ProductProfile),
-                typeof(ClientProfile),
-                typeof(ClientProfile));
+                typeof(CustomerProfile),
+                typeof(CustomerProfile));
     }
 }

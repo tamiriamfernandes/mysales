@@ -24,3 +24,5 @@
 /src/MySales.Model/obj
 /src/MySales.Model/bin/Debug/net7.0
 /src/MySales/appsettings.Development.json
+/src/MySales.Tests/bin/Debug/net7.0
+/src/MySales.Tests/obj
