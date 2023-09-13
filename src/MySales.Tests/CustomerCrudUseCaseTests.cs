@@ -17,7 +17,7 @@ public class CustomerCrudUseCaseTests
     public async Task CreateAsync_NewCustomer_ReturnCustomerId()
     {
         // Arrange
-        var createClientDto = new CreateCustomerDto("Tamiriam", "17996521880");
+        var createClientDto = new CreateCustomerDto("Tamiriam", "17996521880"); //TODO usar um automock
 
         var expectedClientId = 1;
 
