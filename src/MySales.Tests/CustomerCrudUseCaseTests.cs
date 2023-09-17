@@ -54,6 +54,7 @@ public class CustomerCrudUseCaseTests
 
         // Assert
         Assert.True(success);
+        _mockCustomerRepository.Verify(repo => repo.SaveChangesAsync(), Times.Once);
     }
 
     [Theory]
