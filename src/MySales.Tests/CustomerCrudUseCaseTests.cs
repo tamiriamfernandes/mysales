@@ -67,10 +67,6 @@ public class CustomerCrudUseCaseTests
     {
         var inputClientDto = new InputCustomerDto(name, phone);
 
-        _mockMapper.Setup(mapper => mapper.Map<Customer>(It.IsAny<InputCustomerDto>())).Returns(new Customer());
-
-        _mockCustomerRepository.Setup(repo => repo.Add(It.IsAny<Customer>()));
-
         var clientService = new CustomerCrudUseCase(_mockMapper.Object, _mockCustomerRepository.Object, _validator);
 
         bool success = false;
