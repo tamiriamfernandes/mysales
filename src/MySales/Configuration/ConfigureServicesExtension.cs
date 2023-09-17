@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using MySales.Application.Contracts.Repositories;
 using MySales.Application.Contracts.UseCases;
 using MySales.Application.Profiles;
 using MySales.Application.UseCases;
+using MySales.Application.Validators;
 using MySales.Core.Contracts;
 using MySales.Core.Core;
 using MySales.Infrastructure.Contexts;
@@ -23,6 +25,8 @@ public static class ConfigureServicesExtension
         services.AddScoped<IOauthUseCase, OauthUseCase>();
 
         services.AddScoped<IOauthCore, OauthCore>();
+
+        services.AddValidatorsFromAssemblyContaining<CustomerValidation>();
     }
 
     public static void AddContext(this IServiceCollection services, IConfiguration configuration)

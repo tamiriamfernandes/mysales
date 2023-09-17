@@ -29,9 +29,9 @@ public class CustomerController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateCustomerDto createCustomer)
+    public async Task<IActionResult> Create([FromBody] InputCustomerDto inputCustomer)
     {
-        var result = await _customerUseCase.CreateAsync(createCustomer);
+        var result = await _customerUseCase.CreateAsync(inputCustomer);
         return Ok(result);
     }
 }

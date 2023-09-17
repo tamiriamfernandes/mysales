@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace MySales.Api.Filters;
@@ -14,17 +15,23 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
     public override void OnException(ExceptionContext context)
     {
-        _logger.LogError(context.Exception, "Erro não tratado na API");
+        var message = context.Exception.Message;
+        if (context.Exception is ValidationException validationException)
+        {
+            message = string.Join(" ", validationException.Errors);
+        }
+
+        _logger.LogError(context.Exception, message);
 
         var apiResponse = new
         {
             Success = false,
-            Message = "Ocorreu um erro interno no servidor."
+            Message = message
         };
 
         context.Result = new ObjectResult(apiResponse)
         {
-            StatusCode = 500 // Código de status de erro interno do servidor
+            StatusCode = 500 
         };
     }
 }

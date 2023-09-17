@@ -6,5 +6,5 @@ namespace MySales.Application.Contracts.UseCases;
 public interface ICustomerCrudUseCase
 {
     IEnumerable<Customer> GetAll();
-    Task<long> CreateAsync(CreateCustomerDto createClient);
+    Task<long> CreateAsync(InputCustomerDto inputClient);
 }
