@@ -63,29 +63,32 @@ public class CustomerCrudUseCaseTests
     [InlineData("Tamiriam", "")]
     [InlineData("Nome com 251 caracteresteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTesteTestet", "17996521880")]
     [InlineData("", "17996521880")]
+    [InlineData(null, "17996521880")]
+    [InlineData("Tamiriam", null)]
+    [InlineData(null, null)]
     public async Task Validate_NewCustomer_Erros_For_ValidAsync(string name, string phone)
     {
         var inputClientDto = new InputCustomerDto(name, phone);
 
         var clientService = new CustomerCrudUseCase(_mockMapper.Object, _mockCustomerRepository.Object, _validator);
 
-        bool success = false;
+        bool gotExpectedValidationException = false;
 
         // Act
         try
         {
             var result = await clientService.CreateAsync(inputClientDto);
         }
+        catch (ValidationException v)
+        {
+            gotExpectedValidationException = true;
+        }
         catch (Exception e)
         {
-            if(e is ValidationException validationException)
-            {
-                success = validationException.Errors.Any();
-                if (!success) _testOutput.WriteLine(validationException.Errors?.FirstOrDefault()?.ToString());
-            }
-        }
+            _testOutput.WriteLine(e.Message?.ToString());
+        } 
 
         // Assert
-        Assert.True(success);
+        Assert.True(gotExpectedValidationException);
     }
 }
