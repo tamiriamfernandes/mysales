@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySales.Infrastructure.Contexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySales.Infrastructure.Migrations
 {
     [DbContext(typeof(MySalesContext))]
-    partial class MySalesContextModelSnapshot : ModelSnapshot
+    [Migration("20231009033515_Add_Forenkey_Customer_Sale")]
+    partial class Add_Forenkey_Customer_Sale
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,41 +26,6 @@ namespace MySales.Infrastructure.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "type_movement", new[] { "output", "input" });
             NpgsqlModelBuilderExtensions.HasPostgresEnum(modelBuilder, "type_payment", new[] { "cash", "installments" });
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("MySales.Model.Entities.AccountReceive", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("CustomerId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("DatePaid")
-                        .HasColumnType("timestamp");
-
-                    b.Property<DateTime>("DatePay")
-                        .HasColumnType("timestamp");
-
-                    b.Property<int>("NumberParcel")
-                        .HasColumnType("integer");
-
-                    b.Property<long>("SaleId")
-                        .HasColumnType("bigint");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(15,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("SaleId");
-
-                    b.ToTable("AccountsReceive", (string)null);
-                });
 
             modelBuilder.Entity("MySales.Model.Entities.Customer", b =>
                 {
@@ -165,7 +133,7 @@ namespace MySales.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Total")
-                        .HasColumnType("decimal(15,2)");
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
@@ -186,7 +154,7 @@ namespace MySales.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(15,2)");
+                        .HasColumnType("numeric");
 
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
@@ -255,25 +223,6 @@ namespace MySales.Infrastructure.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("MySales.Model.Entities.AccountReceive", b =>
-                {
-                    b.HasOne("MySales.Model.Entities.Customer", "Customer")
-                        .WithMany("AccountReceives")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MySales.Model.Entities.Sale", "Sale")
-                        .WithMany("AccountReceives")
-                        .HasForeignKey("SaleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Sale");
-                });
-
             modelBuilder.Entity("MySales.Model.Entities.Movements", b =>
                 {
                     b.HasOne("MySales.Model.Entities.Product", "Product")
@@ -328,8 +277,6 @@ namespace MySales.Infrastructure.Migrations
 
             modelBuilder.Entity("MySales.Model.Entities.Customer", b =>
                 {
-                    b.Navigation("AccountReceives");
-
                     b.Navigation("Sales");
                 });
 
@@ -344,8 +291,6 @@ namespace MySales.Infrastructure.Migrations
 
             modelBuilder.Entity("MySales.Model.Entities.Sale", b =>
                 {
-                    b.Navigation("AccountReceives");
-
                     b.Navigation("SaleItems");
                 });
 #pragma warning restore 612, 618

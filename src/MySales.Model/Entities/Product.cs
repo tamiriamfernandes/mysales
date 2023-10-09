@@ -8,5 +8,6 @@ public class Product
     public DateTime CreatedDate { get; set; } = DateTime.Now;
 
     public virtual IEnumerable<Movements>? Movements { get; set; } = default!;
+    public virtual IEnumerable<SaleItem>? SaleItems { get; set; } = default!;
     public virtual Stock? Stock { get; set; } = default!;
 }

@@ -20,10 +20,12 @@ public static class ConfigureServicesExtension
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+        services.AddScoped<ISaleUseCase, SaleUseCase>();
         services.AddScoped<IProductUseCase, ProductUseCase>();
         services.AddScoped<ICustomerCrudUseCase, CustomerCrudUseCase>();
         services.AddScoped<IOauthUseCase, OauthUseCase>();
 
+        services.AddScoped<IAccountReceiveCore, AccountReceiveCore>();
         services.AddScoped<IOauthCore, OauthCore>();
 
         services.AddValidatorsFromAssemblyContaining<CustomerValidation>();

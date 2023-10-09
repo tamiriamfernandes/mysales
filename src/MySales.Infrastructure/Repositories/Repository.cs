@@ -41,6 +41,11 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         _dbSet.Value.Add(entity);
     }
 
+    public void AddRange(IEnumerable<TEntity> entities)
+    {
+        _dbSet.Value.AddRange(entities);
+    }
+
     public void Update(TEntity entity)
     {
         _dbSet.Value.Attach(entity);

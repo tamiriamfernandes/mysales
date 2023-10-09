@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySales.Infrastructure.Contexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySales.Infrastructure.Migrations
 {
     [DbContext(typeof(MySalesContext))]
-    partial class MySalesContextModelSnapshot : ModelSnapshot
+    [Migration("20231009040117_Alter_Table_AccountReceive_Add_NumberParcel")]
+    partial class Alter_Table_AccountReceive_Add_NumberParcel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

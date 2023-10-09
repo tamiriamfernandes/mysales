@@ -14,6 +14,7 @@ public class MySalesContext : DbContext
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MySalesContext).Assembly);
         modelBuilder.HasPostgresEnum<TypeMovement>();
+        modelBuilder.HasPostgresEnum<TypePayment>();
 
         base.OnModelCreating(modelBuilder);
     }

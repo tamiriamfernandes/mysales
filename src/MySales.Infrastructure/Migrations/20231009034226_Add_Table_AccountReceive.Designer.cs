@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySales.Infrastructure.Contexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySales.Infrastructure.Migrations
 {
     [DbContext(typeof(MySalesContext))]
-    partial class MySalesContextModelSnapshot : ModelSnapshot
+    [Migration("20231009034226_Add_Table_AccountReceive")]
+    partial class Add_Table_AccountReceive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +43,6 @@ namespace MySales.Infrastructure.Migrations
 
                     b.Property<DateTime>("DatePay")
                         .HasColumnType("timestamp");
-
-                    b.Property<int>("NumberParcel")
-                        .HasColumnType("integer");
 
                     b.Property<long>("SaleId")
                         .HasColumnType("bigint");
